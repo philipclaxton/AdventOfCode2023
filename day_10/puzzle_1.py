@@ -106,26 +106,12 @@ def proceed_through_pipe(
     next_position = start_position + entry_direction
     next_pipe_move = get_next_move_from_pipe(lookup_pipe(next_position))
     if entry_direction == NONE or next_pipe_move == NONE:
-        print("Exit 1")
-        print("Start pipe: ", lookup_pipe(start_position))
-        print("Start position: ", start_position)
-        print("Entry direction: ", entry_direction)
-        print("Next pipe: ", lookup_pipe(next_position))
-        print("Next position: ", next_position)
-        print("Next pipe move: ", next_pipe_move)
         return None, None
 
     if is_move_possible(entry_direction, next_pipe_move):
         next_direction = get_new_direction(next_pipe_move, entry_direction)
         return next_position, next_direction
     else:
-        print("Exit 2")
-        print("Start pipe: ", lookup_pipe(start_position))
-        print("Start position: ", start_position)
-        print("Entry direction: ", entry_direction)
-        print("Next pipe: ", lookup_pipe(next_position))
-        print("Next position: ", next_position)
-        print("Next pipe move: ", next_pipe_move)
         return None, None
 
 
@@ -158,7 +144,4 @@ for next_move in [NORTH, SOUTH, WEST, EAST]:
 
 if len(number_of_steps_list) == 2:
     # Good loop
-
     print(number_of_steps_list[0] / 2)
-
-print(start)
